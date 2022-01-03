@@ -5,8 +5,7 @@ import json
 import random
 from replit import db
 from keyWords import token
-from keyWords import sad_words
-from keyWords import starter_encouragements
+from keyWords import sad_words, starter_encouragements
 
 
 client = discord.Client()
