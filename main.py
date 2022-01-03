@@ -1,10 +1,5 @@
 import discord
-import os
-import requests
-import json
-import random
-from replit import db
-from keyWords import token
+from discord.keyWords import token
 
 client = discord.Client()
 
