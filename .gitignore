@@ -1,0 +1,11 @@
+*discord/keyWords.py
+*discord/__init__.py
+*discord/__pycache__/
+
+/excel-tools/sa-voluteer.xlsx
+/excel-tools/~$sa-voluteer.xlsx
+
+.env
+.idea/
+
+
