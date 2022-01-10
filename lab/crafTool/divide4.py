@@ -21,14 +21,20 @@
 list = list()
 user_num = int(input("enter int:"))
 x = int(input("divide this :"))
+user_num1 = user_num // x
+user_num2 = user_num1 // x
+user_num3 = user_num2 // x
 
-for i in range(3):
-    user_num = user_num // x
-    list.append(user_num)
-print(list)
-print(end="")
-for x in list:
-    print(x)
+print(user_num1, user_num2, user_num3)
+
+#
+# for i in range(3):
+#     user_num = user_num // x
+#     list.append(user_num)
+# print(list)
+# print(end="")
+# for x in list:
+#     print(x)
 
 # todo
 # us = int(input("one"))
