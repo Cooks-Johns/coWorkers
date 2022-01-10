@@ -1,4 +1,11 @@
-user_int = int(input('Enter integer (32 - 126):\n'))
+
+def reverse_Input(x):
+    return x[::-1]
+
+user_int = reverse_Input(input('Enter your word to be flipped:\n'))
+
+
+print(user_int)
 
 # FIXME (1): Finish reading other items into variables, then output the four values on a single line separated by a space
 
