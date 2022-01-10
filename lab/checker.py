@@ -23,8 +23,6 @@ while True:
     print("Hello", color.BOLD + username + color.END)
     print("You were born in",  color.BOLD + boldYear + color.END, ".")
 
-# TODO In addition, submit a Microsoft Word document of 2 to 3 paragraphs explaining
-# some of the features of PyCharm and why they can be useful.
 
 # TODO
 # TODO
