@@ -9,4 +9,4 @@ first10 = links[:10]  # Keep only the first 10 anchors
 for anchor in first10:
     print(anchor.text)  # Display the innerText of each anchor
 
- 
+
