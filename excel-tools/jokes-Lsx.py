@@ -1,4 +1,3 @@
-import datetime
 import openpyxl
 import requests
 from bs4 import BeautifulSoup
@@ -10,14 +9,17 @@ soup = BeautifulSoup(page.content, 'html.parser')
 
 
 # This will create a defualt workbook meaning there is always one
-ws.title = "Items"
+ws.title = "dadJokes"
 wb.iso_dates = True
-date_and_time = datetime.datetime.now()
+
+
+
 
 links = soup.select('ul li p')
-first10 = links[:100]
-for anchor in first10:
-    ws.append([anchor.text, date_and_time])
+first133 = links[:133]
+
+for anchor in first133:
+    ws.append([anchor.text])
 
 
 
