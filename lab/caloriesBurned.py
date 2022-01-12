@@ -36,6 +36,8 @@ weight = float(input("What is your weight? :"))
 heartRate = float(input("What is your heart rate? :"))
 time = float(input("How many mins did you workout? :"))
 
-calories = ((age * 0.2757) + (weight * 0.03295) + (heartRate * 1.0781) - 75.4991) * time / 8.368
+calories = ((age * 0.2757)
+            + (weight * 0.03295)
+            + (heartRate * 1.0781) - 75.4991) * time / 8.368
 
 print('Calories: {:.2f} calories'.format(calories))
