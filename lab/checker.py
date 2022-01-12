@@ -8,7 +8,6 @@ class color:
     BOLD = '\033[1m'
     END = '\033[0m'
 
-
 def calculateYear(userAge):
     if userAge <= 0:
         return userAge
@@ -16,10 +15,24 @@ def calculateYear(userAge):
     year = today.year - userAge
     return year
 
+#TODo how to check
+
+def checker(x):
+
+    if username is None or len(username) and userAge <= 0:
+        return username
+
+
+
+
+## END
 while True:
 
+
     username = input("What is your name? ").capitalize()
+    checker()
     userAge = int(input("How old are you? "))
+    calculateYear()
     boldYear = str(calculateYear(userAge))
 
     hi = "Hello {}!"
