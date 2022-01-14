@@ -13,6 +13,7 @@ ws.title = "dadJokes"
 wb.iso_dates = True
 
 
+ws.append([("..")])
 
 
 links = soup.select('ul li p')
