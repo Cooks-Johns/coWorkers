@@ -1,8 +1,8 @@
 # SAMPLE INPUTS
 
-color = "yellow"
-obj = "Daisy"
-num = "6"
+color = ("yellow")
+obj = ("Daisy")
+num = ("6")
 
 
 # Todo (1) ask user for two words and store as vars
@@ -19,8 +19,8 @@ num = "6"
 
 print("You entered:", color, obj, num)
 print('')
-print("First password: {}_{}".format(color, obj))
-print("Second password: {}{}{}".format(num, color, num))
+print("First password:", color + "_" + obj)
+print("Second password:", num + color + num)
 
 
 
@@ -32,6 +32,10 @@ outPut2 = int(len(num) + len(color) + len(num))
 
 print("-"*24)
 print("You entered: {} {} {}".format(color, obj, num))
-print('')
-print("First password: {}_{}".format(color, obj), outPut1)
-print("Second password: {}{}{}".format(num, color, num), outPut2)
+
+print("")
+print("First password:", color + "_" + obj)
+print("Second password:", num + color + num)
+print("")
+print("Number of characters in: {}_{}".format(color, obj), outPut1)
+print("Number of characters in {}:".format(num, color, num), outPut2)
