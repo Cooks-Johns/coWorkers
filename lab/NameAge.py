@@ -20,6 +20,11 @@ while True:
 # FIXME not sure how to make user input bold
     username = input("What is your name? ").capitalize()
     userAge = int(input("How old are you? "))
+# Testing Todo when doing it like this doesn't work
+    # not sure how to format user key input
+#     testAge = color.BOLD + input("how old") + color.END
+#     boldYear = str(calculateYear(testAge))
+
     boldYear = str(calculateYear(userAge))
 
     hi = "Hello " + username
