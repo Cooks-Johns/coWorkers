@@ -20,3 +20,13 @@ print("round up {}: then return {} as square root".format(xzz,xz))
 fac = 4
 facc = math.factorial(fac)
 print("factorial (3! = 3 * 2 * 1) for input {} this returns {}".format(fac, facc))
+
+#Smallest number
+num1 = 23
+num2 = 21
+num3 = 2
+min_num = min(num3,num1,num2)
+print("smalles number between {}, {}, {} is {}.".format(num3,num1,num2,min_num))
+
+
+
