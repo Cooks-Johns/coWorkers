@@ -52,15 +52,50 @@ from datetime import datetime
 #
 # print(season)
 #
+
+
 # Take 3
-import calendar
-yy = 1988
-mm = 6
-print(calendar.month(yy, mm))
+month_input = 'January'  #input()
+day_input = 21  # int(input())
 
-if month_input == {'January', 'February', 'March'}:
+# if month_input == ('January', 'February', 'March') and (day_input > 19 and day_input < 30):
 
-    ("December", "January", "Febuary", "March")
-    ("September", "October", "November", "December")
-    ("September", "October", "November", "December")
-    ("March", "April", "May", "June")
+
+seasons = [
+    "January", "Febuary", "March",
+    "April", "May", "June",
+    "July", "August", "September", "October",
+    "November", "December"
+]
+day = [*range(1,31)]
+
+
+spring = "March", "April", "May", "June"
+# if march is > 20 and June is < 20
+
+summer = "June", "July", "August", "September"
+# if June is > 21 and September is < 21
+
+autumn = "September", "October", "November", "December"
+# if September is > 22 and December is < 20
+
+winter = "December", "January", "Febuary", "March"
+# if December is > 21 and March is < 19
+
+# Check user input
+
+if day_input in day and month_input in seasons:
+    month_input = month_input
+    day_input = day_input
+    if month_input == "March" and day_input > 20:
+        print("Spring")
+    elif month_input == "June" and day_input < 20:
+        print("Spring")
+    elif month_input == ""
+else:
+    print("error")
+
+
+
+
+
