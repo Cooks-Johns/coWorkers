@@ -9,7 +9,6 @@ while True:
     week_hours = 40      # Hours needed to get overtime_wage
     overtime_wage = 30   # Pay for exceeding week_hours
 
-
     # Step 1: Prompt user - allow user to input
                 # float so that if they worked not a full hour
                 # FIXME check user input for valid input
@@ -30,10 +29,8 @@ while True:
 
     # TOdo Make sure that when user inputs isn't correct
     #  the applications starts back at the prompt to enter input
-
     else:
         print("Invalaid entery, please try again. ")
-
 
     # Step 3: Return the users
     print("You have earned ${} this week".format(payCheck))
