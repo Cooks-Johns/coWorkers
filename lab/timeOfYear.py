@@ -55,7 +55,7 @@ from datetime import datetime
 
 
 # Take 3
-month_input = 'June'  #input()
+month_input = 'October'  #input()
 day_input = 21  # int(input())
 
 days = int(day_input)
@@ -71,76 +71,76 @@ seasons = [
 day = [*range(1,31)]
 
 
-spring = "March", "April", "May", "June"
+spring = ["March", "April", "May", "June"]
 # if march is > 20 and June is < 20
 
-summer = "June", "July", "August", "September"
+summer = ["June", "July", "August", "September"]
 # if June is > 21 and September is < 21
 
-autumn = "September", "October", "November", "December"
+autumn = ["September", "October", "November", "December"]
 # if September is > 22 and December is < 20
 
-winter = "December", "January", "Febuary", "March"
+winter = ["December", "January", "Febuary", "March"]
 # if December is > 21 and March is < 19
 
 # Check user input
-if day_input in day and month_input in seasons:
+if month_input not in seasons and day_input not in day:
     month_input = month_input
     day_input = day_input
-else:
-    print("error")
+# else:
+#     seasons = "Invalid"
+#
+# while month_input in seasons:
+#     # print user season
 
-# Check user season
-# Spring
-# if month_input in spring and month_input == "April" or "May":
-#     print("Spring")
-# elif month_input == "March" and day_input > 20:
-#     print("Spring")
-# elif month_input == "June" and day_input <= 20:
-#     print("Spring")
-# # Summer
-# if month_input in summer and month_input == "July" or "August":
-#     print("Summer")
-# if month_input == "June" and day_input > 21:
-#     print("Summer")
-# elif month_input == "September" and day_input < 21:
-#     print("Summer")
-
-# print user season
-
-if month_input in spring:
-    seasons = "Spring"
-elif month_input in summer:
-    seasons = "Summer"
-elif month_input in autumn:
-    seasons = "Autumn"
-else:
-    seasons = "Winter"
-
-#Spring
-if seasons == "April" or "May":
-    seasons = "Spring"
-    if seasons == "March" and day_input > 20 or seasons == "June" and day_input < 20:
+    if month_input in spring or month_input == "April" or "May":
         seasons = "Spring"
-
-#Summer
-if seasons == "July" or "August":
-    seasons = "Summer"
-    if seasons == "June" and day_input > 21 or seasons == "September" and day_input < 21:
+    elif month_input in summer or month_input == "July" or "August":
         seasons = "Summer"
-
-
-#Autumn
-if seasons == "October" or "November":
-    seasons = "Autumn"
-    if seasons == "September" and day_input > 22 or seasons == "December" and day_input < 20:
+    elif month_input in autumn or month_input == "October" or "November":
         seasons = "Autumn"
-
-
-# Winter
-if seasons == "January" or "Febuary":
-    seasons = "Winter"
-    if seasons == "December" and day_input > 21 or seasons == "March" and day_input < 19:
+    elif month_input in winter or month_input == "January" or "Febuary":
         seasons = "Winter"
+
+    # Spring
+    # if month_input == "March" and day_input > 20 or month_input == "June" and day_input < 20:
+    #         seasons = "Spring"
+    # #Summer
+    # elif month_input == "June" and day_input > 21 or month_input == "September" and day_input < 21:
+    #         seasons = "Summer"
+    # #Autumn
+    # elif month_input == "September" and day_input > 22 or month_input == "December" and day_input < 20:
+    #         seasons = "Autumn"
+    #
+    # # Winter
+    # elif month_input == "December" and day_input > 21 or month_input == "March" and day_input < 19:
+    #         seasons = "Winter"
+
+    elif month_input == "March":
+        if day_input >= 20:
+            if month_input == "June":
+                if day_input <= 20:
+                    seasons = "Spring"
+
+    elif month_input == "June":
+        if day_input >= 21:
+            if month_input == "September":
+                if day_input <= 21:
+                    seasons = "summer"
+
+    elif month_input == "September":
+        if day_input >= 22:
+            if month_input == "December":
+                if day_input <= 20:
+                    seasons = "Autumn"
+
+    elif month_input == "December":
+        if day_input >= 21:
+            if month_input == "March":
+                if day_input <= 19:
+                    seasons = "Winter"
+else:
+    seasons = "Invalid"
+
 
 print(seasons)
