@@ -48,14 +48,24 @@ elif month_input == "October" or "November":
 elif month_input == "January" or "Febuary":
     seasons = "Winter"
 
+
+
 if month_input == "March":
     if day_input >= 20:
-        if month_input == "June":
-            if day_input <= 20:
-                seasons = "Spring"
+        seasons = "Spring"
+    elif month_input == "March":
+            if day_input <= 19:
+                seasons = "Winter"
+
+
 
 if month_input == "June":
     if day_input >= 21:
+        seasons = "Summer"
+    elif month_input == "June":
+        if day_input <= 20:
+            seasons = "Spring"
+
         if month_input == "September":
             if day_input <= 21:
                 seasons = "summer"
@@ -68,8 +78,6 @@ if month_input == "September":
 
 if month_input == "December":
     if day_input >= 21:
-        if month_input == "March":
-            if day_input <= 19:
-                seasons = "Winter"
+        if
 
 print(seasons)
