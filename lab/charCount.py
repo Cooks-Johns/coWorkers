@@ -15,7 +15,6 @@ print(x)
 # print(char)
 #
 #
-#
 # #
 #
 # cnt = count_Occurrence(char, string)
