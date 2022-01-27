@@ -241,12 +241,102 @@
 
 
 # # ===================== Acceleration of gravity
-G = 6.673e-11
-M = 5.98e24
-accel_gravity = 0.0
+# G = 6.673e-11
+# M = 5.98e24
+# accel_gravity = 0.0
+#
+# dist_center = 6.3782e6 #float(input())
+#
+# accel_gravity = (G*M)/(dist_center**2)
+#
+# print('Acceleration of gravity: {:.2f}
 
-dist_center = 6.3782e6 #float(input())
 
-accel_gravity = (G*M)/(dist_center**2)
+#----------------------------------------- Getting digits
+# p = 100 % (1 // 2)
+# print(p)
 
-print('Acceleration of gravity: {:.2f}'.format(accel_gravity))
+
+# x = 2
+# y = 2 * (x + 8)
+#
+# print(x, y)
+
+#
+# x = 1
+# y = (3 * (x + 1)) + 5
+#
+# print(x, y)
+
+# x = 6
+# y = x / 2
+#
+# print(x, y)
+
+# x = 19
+# y = x % 3
+#
+# print(x, y)
+
+# a = 3
+# x = 4
+# y = a * x
+# y = y + 6
+#
+# print(x, y)
+#====================================================
+# user_val = float(input())
+# #
+# ones_digit = user_val % 10    # Ex: 927 % 10 is 7.
+# tmp_val = user_val // 10
+#
+# tens_digit = tmp_val % 10     # Ex: tmp_val = 927 // 10 is 92. Then 92 % 10 is 2.
+# tmp_val = tmp_val // 10
+#
+# hundreds_digit = tmp_val % 10     # Ex: tmp_val = 92 // 10 = 9. Then 9 % 10 is 9
+#
+# # tmp_val =      phone_num // 10000  # // 10000 shifts right by 4, so 936555.
+# # prefix_num =   tmp_val % 1000 # % 1000 gets the right 3 digits, so 555.
+#
+# print(ones_digit)
+
+
+#====================================================
+# Minutes to hours/minutes
+# minutes = int(input("Enter minutes: \n"))
+# hours = minutes // 60
+# minutes_remaining = minutes % 60
+#
+# print(minutes, 'minutes is ', end='')
+# print(hours, 'hours and ', end='')
+# print(minutes_remaining, 'minutes.\n', end='')
+
+
+#====================================================
+# Minutes to hours/minutes
+
+
+# dollar = float(input("Enter your bill"))
+# penny = dollar // 1
+# nickle = dollar // 5
+# dime = dollar // 10
+# quarter = dollar // 25
+#
+#
+#
+
+#====================================================
+#
+# amount_to_change = 9
+#
+# num_fives = amount_to_change // 5
+#
+# num_ones = amount_to_change % 5
+# print('Change for $', amount_to_change)
+# print(num_fives, 'five dollar bill(s) and', num_ones, 'one dollar bill(s)')
+
+#====================================================
+#
+
+
+
