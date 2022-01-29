@@ -336,7 +336,70 @@
 # print(num_fives, 'five dollar bill(s) and', num_ones, 'one dollar bill(s)')
 
 #====================================================
+# Coord geo
+# import math
+# point_dist = 0.0
 #
+# x1 = 1.0
+# y1 = 2.0
+# x2 = 1.0
+# y2 = 5.0
+#
+# x = math.pow(math.floor(x2 - x1), 2)
+# y = math.pow(math.floor(y2 - y1), 2)
+# print(x)
+# print(y)
+# z = math.sqrt(math.ceil(x + y))
+# point_dist = z
+# print('Points distance:', point_dist)
+#====================================================
+# Tree
+# formula: tan(angleElevation) = treeHeight / shadowLength
+# import math
+#
+# tree_height = 0.0
+#
+# angle_elev  = 0.4
+# shadow_len  = 17.5
+#
+# elv = math.tan(math.ceil(angle_elev))
+# print(elv)
+# tree_height = elv * shadow_len
+#
+# print('Tree height:', tree_height)
+
+#
+# current_time = '2014-07-26 02:12:18:'
+# my_city = ''
+# my_state = ''
+# log_entry = ''
+#
+# my_city = "my_city()"
+# my_state = "my_state()"
+# log_entry = current_time+" "+my_city+" "+my_state
+#
+# print(log_entry)
+
+#====================================================
+# Named tuples
+# Create a new address object house where
+# house.street is "221B Baker Street",
+# house.city is "London", and house.country is "England"
+
+# from collections import namedtuple
+#
+# Address = namedtuple('Address', ['street', 'city', 'country'])
+# house = Address("221B Baker Street", "London", "England")
+#
+# Player = namedtuple('Player', ['name', 'number', 'position', 'team'])
+#
+# cam = Player('Cam Newton', '1', 'Quarterback', 'Carolina Panthers')
+# lebron = Player('Lebron James', '23', 'Small forward', 'Los Angeles Lakers')
+#
+# print(cam.name + '(#' + cam.number + ')' + ' is a ' + cam.position + ' for the ' + cam.team + '.')
+# print(lebron.name + '(#' + lebron.number + ')' + ' is a ' + lebron.position + ' for the ' + lebron.team + '.')
 
 
-
+x = str(99
+        )
+print(x)
