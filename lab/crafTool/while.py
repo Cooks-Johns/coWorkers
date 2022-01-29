@@ -191,23 +191,15 @@ Average: 5
 #
 
 #---
+
+
+
 # I = 20
 # N = 100
 #
-# while I < N:
-#     if I % 10 > 0:
-#         print(I)
-#     else:
-#         print(I)
-#         I = I * 2
-
-
-I = 20
-N = 100
-
-while I <= 100:
-    print(I)
-    I = I + I
+# while I > 0:
+#     print(I)
+#
 
 
 
@@ -268,4 +260,13 @@ while I <= 100:
 # while i >= 31:
 #     i = i - 2
 #     print(i)
+
+# outer_helper = 0
+#
+# while outer_helper < 3:
+#     inner_helper = 0
+#     while inner_helper < 3:
+#         print("outer_helper is {} and inner_helper is {}".format(outer_helper, inner_helper))
+#         inner_helper += 1
+#     outer_helper += 1
 
