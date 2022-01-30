@@ -399,7 +399,61 @@
 # print(cam.name + '(#' + cam.number + ')' + ' is a ' + cam.position + ' for the ' + cam.team + '.')
 # print(lebron.name + '(#' + lebron.number + ')' + ' is a ' + lebron.position + ' for the ' + lebron.team + '.')
 
+# air_temperature = 36.4158102
+#
+# print('{x:.1f}c'.format(x = air_temperature))
+#
+# my_str = 'Agt2t3afc2kjMhagrds!'  # Reads every other character because the stride is 2.
+# print(my_str[::2])
 
-x = str(99
-        )
-print(x)
+# =================================================================
+# #--- Replace
+# replace(old, new, count)
+# replace(old, new)
+
+# phrase = 'Someday I will have three goats, six horses, and nine llamas.'
+# # Replace English with Spanish.
+# phrase = phrase.replace('one', 'uno')
+# phrase = phrase.replace('two', 'dos')
+# phrase = phrase.replace('three', 'tres')
+# phrase = phrase.replace('four', 'cuatro')
+# phrase = phrase.replace('five', 'cinco')
+# =================================================================
+song = "I scream; you scream; we all scream, for ice cream.\n"
+
+# print(song.split())
+# ['I', 'scream;', 'you', 'scream;', 'we', 'all', 'scream,', 'for', 'ice', 'cream.']
+
+# print(song.split('\n'))
+# ['I scream; you scream; we all scream, for ice cream.', '']
+
+# print(song.split('scream'))
+# ['I ', '; you ', '; we all ', ', for ice cream.\n']
+# =================================================================
+# splitting and joining
+# path = input('Enter file name: ')
+#
+# new_separator = input('Enter new separator: ')
+# tokens = path.split('/')
+# print(new_separator.join(tokens))
+
+# ==============
+# split join: Edit tokens
+
+# url = input("Enter wikipedia URL: ")
+#
+# tokens = url.split('/')
+#
+# if 'wiki' != tokens[3]:
+#     tokens.insert(3, 'wiki')
+#     new_url = '/'.join(tokens)
+#     print('{} is not a valid address.'.format(url))
+#     print('Redirecting to {}'.format(new_url))
+# else:
+#     print('Loading {}'.format(url))
+
+phone_number = '977-555-3221'
+
+number_segments = phone_number.split('-')
+area_code = number_segments[0]
+print('Area code:', area_code)
