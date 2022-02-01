@@ -14,7 +14,7 @@
 
 
 
-# =====================
+# ===================== FIXME
 # Welcome to the Python 500 race! Click the run button to begin.
 
 # Configurable values.
