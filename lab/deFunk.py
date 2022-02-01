@@ -1,3 +1,6 @@
+from lab.crafTool.caloriesBurned import caloriesBurned
+
+
 def print_pizza_area():
     pi_val = 3.14159265
     pizza_diameter = 12.0
@@ -8,3 +11,4 @@ def print_pizza_area():
 
 
 print_pizza_area()
+caloriesBurned()
