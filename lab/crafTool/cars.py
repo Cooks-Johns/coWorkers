@@ -227,16 +227,18 @@
 # print('  ', num_TNT_tons, 'tons of TNT')
 
 # # ===================== Sphere volume
-# # sphere = (4.0 / 3.0)πr3
-# area = float(input())
-# gallons_paint = area/350
-#
-# pi = 3.14159
-# sphere_volume = 0.0
-#
-# sphere_radius = float(input())
-# sphere_volume = 4.0/3.0*pi*sphere_radius**3
-# print('Sphere volume: {:.2f}'.format(sphere_volume))
+
+# sphere = (4.0 / 3.0)πr3
+def sphere_volume():
+    area = float(input("Enter area of sphere: \n"))
+    gallons_paint = area/350
+
+    pi = 3.14159
+    sphere_volume = 0.0
+
+    sphere_radius = float(input('Enter the radius of the sphere: \n'))
+    sphere_volume = 4.0/3.0*pi*sphere_radius**3
+    print('Sphere volume: {:.2f}'.format(sphere_volume))
 
 
 
@@ -303,13 +305,14 @@
 
 #====================================================
 # Minutes to hours/minutes
-# minutes = int(input("Enter minutes: \n"))
-# hours = minutes // 60
-# minutes_remaining = minutes % 60
-#
-# print(minutes, 'minutes is ', end='')
-# print(hours, 'hours and ', end='')
-# print(minutes_remaining, 'minutes.\n', end='')
+def min_hours():
+    minutes = int(input("Enter minutes: \n"))
+    hours = minutes // 60
+    minutes_remaining = minutes % 60
+
+    print(minutes, 'minutes is ', end='')
+    print(hours, 'hours and ', end='')
+    print(minutes_remaining, 'minutes.\n', end='')
 
 
 #====================================================
@@ -451,9 +454,10 @@ song = "I scream; you scream; we all scream, for ice cream.\n"
 #     print('Redirecting to {}'.format(new_url))
 # else:
 #     print('Loading {}'.format(url))
+def num():
+    phone_number = '977-555-3221'
 
-phone_number = '977-555-3221'
-
-number_segments = phone_number.split('-')
-area_code = number_segments[0]
-print('Area code:', area_code)
+    number_segments = phone_number.split('-')
+    area_code = number_segments[0]
+    print('Area code:', area_code)
+    pass
