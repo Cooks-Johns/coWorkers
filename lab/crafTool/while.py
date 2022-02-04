@@ -36,18 +36,20 @@
 
 # =================================
 ### Find your ancestors
-# year_considered = 2020 # Year being considered
-# num_ancestors = 2 # Guess of ancestors in considered year
-# year_per_generation = 20 # Approx. years per generation
-#
-# user_year = int(input("Enter a past year (neg. for B.C.): "))
-# print()
-#
-# while year_considered >= user_year:
-#     print("Ancestors in {}: {}".format(year_considered, num_ancestors))
-#
-#     num_ancestors = num_ancestors * 2
-#     year_considered = year_considered - year_per_generation
+
+def numOfAncestors():
+    year_considered = 2020 # Year being considered
+    num_ancestors = 2 # Guess of ancestors in considered year
+    year_per_generation = 20 # Approx. years per generation
+
+    user_year = int(input("Enter a past year (neg. for B.C.): "))
+    print()
+
+    while year_considered >= user_year:
+        print("Ancestors in {}: {}".format(year_considered, num_ancestors))
+
+        num_ancestors = num_ancestors * 2
+        year_considered = year_considered - year_per_generation
 
 # =================================================================
 
