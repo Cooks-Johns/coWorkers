@@ -351,3 +351,49 @@ Average: 5
 #         print('Unrecognized command, please try again.')
 #
 #     user_input = input('Enter command:\n').strip().lower()
+#
+#
+# #------------------------ take one
+#
+# string input
+test1 = 'apple', 5
+test2 = 'nikes 2'
+stop = 'quit 0'
+
+# make a sentence with input
+
+lis = test1
+
+# while 'quit' not in test1:
+#     if test1 == 'quit':
+#         break
+#     else:
+#         print('Eating {} {} a day keeps the doctor away.'.format(test1[1], test1[0]))
+#     test1 = input('inner'),int(input('in num'))
+
+# # keeps going until user inputs quit
+#
+# #------------------------ take two
+
+sa, ta, qu = 'apples 5', 'shoes 2', 'quit 0'
+test = sa,ta,qu
+print(sa, ta, qu)
+
+lis = test
+for x in lis:
+
+    print()
+    print('Eating {} a day keeps the doctor away.'.format(x))
+
+#
+# test1 = test
+# print(test)
+# # make a sentence with input
+# i = 0
+#
+
+#     if test1 == 'quit':
+#         break
+#     else:
+#         print('Eating {} {} a day keeps the doctor away.'.format(test1[1], test1[0]))
+#     test1 = input('inner'),int(input('in num'))
