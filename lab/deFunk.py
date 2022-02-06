@@ -189,12 +189,13 @@ import math
 # print('max_sum is:', max_sum)
 
 # ---------------------------------------------
-# FIXME Volume of a pyramid
+# Volume of a pyramid
 #
 # def pyramid_volume(base_length, base_width, pyramid_height):
-#     area = base_length * base_width
-#     return '{:.2f}\n'.format(area * pyramid_height * 1/3)
-#
+#     m = 1/3
+#     base_area = base_length * base_width * m
+#     v = base_area * pyramid_height
+#     return v
 #
 # length = 4.5
 # width = 2.1
@@ -245,7 +246,7 @@ import math
 # def steps_to_calories(steps):
 #     print('FIXME: finish steps_to_calories')
 #     return steps - 1
-# 
+#
 # # T
 # steps = 2344
 #
@@ -259,4 +260,50 @@ import math
 # print('step', step)
 # # ---------------------------------------------
 
+# NotImplementedError - this is used to stop a program from running
+# if a unfinished function is called this is used with the
+#  'raise' this keyword
+
+#
+# def get_points(num_points):
+#     """Get num_points from the user. Return a list of (x,y) tuples."""
+#     raise NotImplementedError
+#
+#
+# def side_length(p1, p2):
+#     return math.sqrt((p2[0] - p1[0]) ** 2 + (p2[1] - p1[1]) ** 2)
+#
+#
+# def get_perimeter_length(points):
+#     perimeter = side_length(points[0], points[1])
+#     perimeter += side_length(points[0], points[2])
+#     perimeter += side_length(points[1], points[2])
+#     return perimeter
+#
+#
+# coordinates = get_points(3)
+# print('Perimeter of triangle:', get_perimeter_length(coordinates))
+#
+#
+
+
+
+ # ---------------------------------------------
+# def get_user_num():
+#     print('FIXME: finish get_user_num()')
+#     return - 1
+#
+# def compute_avg():
+#     print('FIXME: compute_avg()')
+#     return - 1
+#
+# user_num1 = 0
+# user_num2 = 0
+# avg_result = 0
+#
+# user_num1 = get_user_num()
+# user_num2 = get_user_num()
+# avg_result = compute_avg(user_num1, user_num2)
+#
+# print('Avg:', avg_result)
 

@@ -358,13 +358,13 @@ Average: 5
 # #------------------------ take one
 #
 # string input
-test1 = 'apple', 5
-test2 = 'nikes 2'
-stop = 'quit 0'
+# test1 = 'apple', 5
+# test2 = 'nikes 2'
+# stop = 'quit 0'
 
 # make a sentence with input
 
-lis = test1
+# lis = test1
 
 # while 'quit' not in test1:
 #     if test1 == 'quit':
@@ -377,15 +377,15 @@ lis = test1
 #
 # #------------------------ take two
 
-sa, ta, qu = 'apples 5', 'shoes 2', 'quit 0'
-test = sa,ta,qu
-print(sa, ta, qu)
-
-lis = test
-for x in lis:
-
-    print()
-    print('Eating {} a day keeps the doctor away.'.format(x))
+# sa, ta, qu = 'apples 5', 'shoes 2', 'quit 0'
+# test = sa,ta,qu
+# print(sa, ta, qu)
+#
+# lis = test
+# for x in lis:
+#
+#     print()
+#     print('Eating {} a day keeps the doctor away.'.format(x))
 
 #
 # test1 = test
@@ -399,3 +399,51 @@ for x in lis:
 #     else:
 #         print('Eating {} {} a day keeps the doctor away.'.format(test1[1], test1[0]))
 #     test1 = input('inner'),int(input('in num'))
+#-------------------
+#
+
+
+#
+# import math
+#
+#
+# def get_points(num_points):
+#     """Get num_points from the user. Return a list of (x,y) tuples."""
+#     raise NotImplementedError
+#
+#
+# def side_length(p1, p2):
+#     return math.sqrt((p2[0] - p1[0]) ** 2 + (p2[1] - p1[1]) ** 2)
+#
+#
+# def get_perimeter_length(points):
+#     perimeter = side_length(points[0], points[1])
+#     perimeter += side_length(points[0], points[2])
+#     perimeter += side_length(points[1], points[2])
+#     return perimeter
+#
+#
+# coordinates = get_points(3)
+# print('Perimeter of triangle:', get_perimeter_length(coordinates))
+
+
+
+
+#-------------------
+
+def get_user_num():
+    print('FIXME: Finish get_user_num()')
+
+def compute_avg(x, y):
+    print('FIXME: Finish compute_avg()')
+    return -1
+
+user_num1 = 0
+user_num2 = 0
+avg_result = 0
+
+user_num1 = get_user_num()
+user_num2 = get_user_num()
+avg_result = compute_avg(user_num1, user_num2)
+
+print('Avg:', avg_result)
