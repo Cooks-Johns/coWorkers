@@ -33,13 +33,12 @@ def main_menu():
 
 
 
-
 # -------------- Toons
 def nomad():
     print(Fore.GREEN)
     print("'n'--> for Nomad __________________________________\n"
           "They have walked the path alone so    |\n"
-          "make sure thier on your team          |\n"
+          "They can walk the path with many      |\n"
           "<---------------------------------------->")
     print(Style.RESET_ALL)
 
@@ -56,7 +55,7 @@ def berserker():
     print(Fore.RED)
     print('\'b\' for Berserker______________________________________\n'
           'So this might be a good time to run....     |\n'
-          'but if I it\'s already to late.              |\n'
+          'but if they see you it\'s already to late.              |\n'
           '<-----------------------------------------------> ')
     print(Style.RESET_ALL)
 
@@ -65,29 +64,32 @@ def berserker():
 
 # ------------ Pick your character
 def get_char(hear):
-
-    print('Hello {}, who would you like to be'.format(choice))
+    global choice
+    choice = format(Fore.LIGHTMAGENTA_EX + choice + Style.RESET_ALL)
+    print('Hello {}, pick your class'.format(choice))
     nomad()
     alchemist()
     berserker()
 
-    list = {'a', 'n', 'c'}
-    hear = "h"  # input().upper
+    list = {'A', 'N', 'B'}
+    hear = "n".upper()  # input().upper
 
     if hear == 'A':
-        print('You are a Alchemist {}'.format(choice))
-    if hear == 'N':
-        print('Your are a Nomad {}'.format(choice))
+        print(choice, Fore.BLUE+ 'The Alchemist.' +Style.RESET_ALL)
+    elif hear == 'N':
+        print(choice,Fore.GREEN+ 'The Nomad' +Style.RESET_ALL)
+    elif hear == 'B':
+        print(choice, Fore.RED + 'The Berserker'+ Style.RESET_ALL)
     elif hear not in list:
-        print('input worn')
+        print('input worng')
 
+    f = input('what now')
+
+
+main_menu()
 choice = "MidNightCookies"  # input()
 
-while choice != 'N':
-    main_menu()
-    # This can be done better with location
-    choice = format(Fore.LIGHTMAGENTA_EX + choice + Style.RESET_ALL)
-    get_char(choice)
+# This can be done better with location
 
-    choice = 'Y'
-print("later bro")
+
+get_char(choice)

@@ -12,3 +12,9 @@ print(user_int)
 # FIXME (2): Output the four values in reverse
 
 # FIXME (3): Convert the integer to a characer, and output that character
+
+
+user_input = input()
+
+input_list = user_input.split()
+
