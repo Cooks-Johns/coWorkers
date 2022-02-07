@@ -104,38 +104,171 @@
 #
 # print(add_up(4))
 
-# -----
-def human_head():
-    print('   ||||| ')
-    print('   o   o')
-    print('     >' )
-    print('   ooooo')
-    return
+# # -----
+# def human_head():
+#     print('   ||||| ')
+#     print('   o   o')
+#     print('     >' )
+#     print('   ooooo')
+#     return
+#
+# def monkey_head():
+#     print('   .-"-.')
+#     print(' _/.-.-.\\_')
+#     print('( ( o o ) )')
+#     print(' |/  "  \\|')
+#     print('  \\ .-. /')
+#     print('  /`"""`\\')
+#     return
+#
+# def print_figure(face):
+#     face()  # Print the face
+#     print('     |')
+#     print('   --|--')
+#     print('  /  |  \\')
+#     print('@    |    @')
+#     print('     |')
+#     print('    /|\\')
+#     print('   @   @')
+#     return
+#
+# choice = int(input('Enter "1" to draw monkey, "2" for human: '))
+#
+# if choice == 1:
+#     print_figure(monkey_head)
+# elif choice == 2:
+#     print_figure(human_head)
+#
+# ---
 
-def monkey_head():
-    print('   .-"-.')
-    print(' _/.-.-.\\_')
-    print('( ( o o ) )')
-    print(' |/  "  \\|')
-    print('  \\ .-. /')
-    print('  /`"""`\\')
-    return
+# def celsius_to_kelvin(value_celsius):
+#     value_kelvin = 0.0
+#
+#     value_kelvin = value_celsius + 273.15
+#     return value_kelvin
+#
+# def kelvin_to_celsius(value_kelvin):
+#     value_celsius = 0.0
+#
+#     value_celsius = value_kelvin - 273.15
+#     return value_celsius
+#
+# value_c = 10.0
+# print(value_c, 'C is', celsius_to_kelvin(value_c), 'K')
+#
+# value_k = 283.15
+# print(value_k, 'K is', kelvin_to_celsius(value_k), 'C')
+#
 
-def print_figure(face):
-    face()  # Print the face
-    print('     |')
-    print('   --|--')
-    print('  /  |  \\')
-    print('@    |    @')
-    print('     |')
-    print('    /|\\')
-    print('   @   @')
-    return
+# ## ------ We Going Global with these Variables
 
-choice = int(input('Enter "1" to draw monkey, "2" for human: '))
+# emp_name = 'N/A'
+#
+# def get_nam():
+#     # if this is not added the fuction with cast the origin value of emp_name
+#     # --- Ex. Your name is: N/A
+#     # global emp_name
+#     name = input('whats your name homie\n')
+#     emp_name = name
+#
+# get_nam()
+# print('Your name is: {}'.format(emp_name))
+#
+#
+''' 
+Namespace = maps the visible names in a scope to object
+scope = the area of code where a name is visible
+locals() = Returns a dictionary of names found in local namespace
+Scope resolution = The process of searching namespaces for a name
 
-if choice == 1:
-    print_figure(monkey_head)
-elif choice == 2:
-    print_figure(human_head)
+'''
 
+###    -------                        game test
+#
+
+# from game.steps import *
+#
+# main_menu()
+# choice = "MidNightCookies"  # input()
+#
+# # This can be done better with location
+#
+# get_char(choice)
+
+
+###    -------
+
+# import  random
+#
+# player_name = "Gandalfsta"
+# player_type = 'Wizard'
+#
+# def roll(): # d20
+#     number = random.randint(1,20)
+#     return number
+#
+# print('A troll attacks')
+# troll_roll = roll()
+# player_roll = roll()
+#
+# print('Player: {} Troll: {}'.format(str(player_roll), str(troll_roll)))
+
+###    -------
+
+# def avg(a, b):
+#     tmp = (a + b) / 2.0 # will create tmp in local namespace
+#     return tmp
+
+# def get_tmp():
+#     a = 5
+#     b = 10
+#     tmp = a + b # This creates tmp in global namespace
+#     # print('Avg: {:f}'.format(avg(a, b)))
+#     print('Sum: {:f}'.format(tmp))
+#
+# get_tmp()
+#
+#
+
+###    ------- arbitrary argument list
+
+# def sandwich(bread, meat, *sauce):
+#     print('{} on {}'.format(meat, bread), end=' ')
+#     if len(sauce) > 0:
+#         print('with', end=' ')
+#     for extra in sauce:
+#         print(extra, end=' ')
+#     print("")
+#
+#
+# sandwich('sourdough', 'turkey', 'mayo')
+# sandwich('wheat', 'ham', 'mustard', 'tomato', 'lettuce')
+
+###    -------
+#
+# def sandwich(bread, meat, **condiments):  ## **condiments can be any word
+#     print('{} on {}'.format(bread, meat))
+#     for category, extra in condiments.items():
+#         print('   {}: {}'.format(category, extra))
+#
+# sandwich('sourdough', 'turkey', sauce='mayo')
+# sandwich('wheat', 'ham', sauce1='mustard', veggie1='tomato', veggie2='lettuce')
+#
+#
+
+
+
+def nums(user_val1, user_val2):
+    tem = user_val1
+    user_val1 = user_val2
+    user_val2 = tem
+    # lis = '{} {}'.format(user_val2, user_val1)
+    print(user_val1, user_val2)
+
+x, y = 2, 4
+
+
+nums(x, y)
+nums(-1, 10)
+nums(9, 0)
+nums(11, 11)

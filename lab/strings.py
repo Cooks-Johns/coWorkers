@@ -1,4 +1,4 @@
-The code below demonstrates use of string functions:
+# The code below demonstrates use of string functions:
 
 #  Author: Dr. Meadors
 #
