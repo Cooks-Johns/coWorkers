@@ -192,4 +192,25 @@
 #     sum += num
 #
 # print('Sum:', sum)
+#
 
+# my_list = [0, 5, 10, 15]
+# sums = any(my_list)
+# print(sums)
+
+# Max even
+# def max_even():
+#     nums = [1, 44, 15, 24]
+#     max_even = None
+#     for num in nums:
+#         if num % 2 == 0:
+#             if max_even == None or num > max_even:
+#                 max_even = num
+#                 print(max_even)
+# max_even()
+# num = [2, -43, 9, -2, -58]
+# cnt_neg = 0
+# for i in num:
+#     if i < 0:
+#         cnt_neg += 1
+#     print(cnt_neg)
