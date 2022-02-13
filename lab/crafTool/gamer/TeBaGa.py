@@ -1,5 +1,18 @@
 """
  Name:
+
+ In the Foyer there are the shoesOfHermes,
+ these shoes have wings giving the user flight and speed.
+ In the WashRoom there is a elementalWand, this lets you summon
+ different elements blast depending on the season. In the
+ CrystalBallSurveillance room you will find a crystalBall,
+ there are 8 crystal balls on for each room then one that you
+ can carry around to watch the rooms from anywhere but you
+ cannot see the portal room from them. Kitchen this is where
+ the food for the beast is SaltCuredMeat this should be
+ zapped with the wand. Last in the WineCellar this is where
+ the Potion is and should be taken if bitten by the Wendigo.
+
 """
 
 # Todo -- Show the goal of the game and move commands
@@ -18,7 +31,8 @@ def show_instructions():
 
 def show_story():
     print("\n<<-=============================================================================================->>\n")
-    print('     You have picked up a summer job temple \n'
+    print('                 Portal Protector           \n'
+          '     You have picked up a summer job temple \n'
           '     sitting at the mountain temple for your \n'
           '     local wizard and for some reason you cannot \n'
           '     find his pet cat. In order to find the cat \n'
@@ -46,10 +60,46 @@ rooms = {
     'Wine Cellar': {'South': 'Unknown Portal', 'item': 'Potion'},
     'Unknown Portal': {'North': 'Wine Celler', 'item': 'Wendigo'}   # bad guy
 }
-# Todo -- Error message for user if move is a deadend prompt user "Just a wall, try going another way"
 
 
-#The same pattern would be used for the remaining rooms on the map.
+
+
+
+# Todo -- Player must inspect room for item in order to leave room
+room_items = {
+    'WashRoom': 1,
+    'Foyer': 1,
+    'Temple': 1,
+    'Crystal Ball Serveillance Room': 1,
+    'Kitchen': 1,
+    'Wine Cellar': 1,
+    'Unknown Portal': 1
+}
+
+gear = {
+    'WashRoom': {}
+}
+
+
+
+# If the player is lost and needs to know where they are located they can t
+def DisplayMap():
+    print("                                                                              \n"
+          "                _________        _______________               ^ North        \n"
+          "               | Kitchen | ---> | Food Storage  |                             \n"
+          "               |_______  | <--- |__________| |__|                             \n"
+          "                       | |                 | |                                \n"
+          " ______________     ___| |___           ___| |____________                    \n"
+          " | C.Ball Room |<-  |        |          |   Wine Celler  |                    \n"
+          " |_____________| -> | Temple |          |____________  __|                    \n"
+          "   ----------       |__//____|                       | |                      \n"
+          "                      //                             / /                      \n"
+          "                     //                             / /                       \n"
+          "                ____//__       __________        __| |_***************__      \n"
+          "               |  Foyer | --> | Washroom |       |   Unknown Portal   |       \n"
+          "               |________| <-- |__________|       |____________________|       \n")
+
+
 
 
 # Todo - Global Vars
@@ -65,7 +115,7 @@ inventory = []
 
 # Fixme
 
-def Move(direction):
+def MoveMent(direction):
     global move_counter
     global quit_game # only True if player's current room is the bilge.
     global current_room
@@ -74,19 +124,19 @@ def Move(direction):
     direction = direction.lower().capitalize() # Converting 'direction' variable to target format
 
     if direction in rooms[current_room]:
-        # Direction exists. Move to that room.
-        for key, location in rooms[current_room].items():
-            # Match player's 'key' with room key
-            if direction == key:
-                # Move player to that room
-                print("\nMoving", direction)
-                current_room = location
+        # Move player to that room
+        print("\nMoving", direction)
+        current_room = rooms.get(direction)
 
-                if current_room == "Bilge":
-                    quit_game = True
     else:
         # Direction does not exist in that room.
         print("Direction does not exist")
+    return current_room
+
+
+
+
+
 
 # Todo -- Startint point
 def Main_menu():
@@ -106,15 +156,17 @@ def Commands(command):
 
     if command.lower() == "move":
         player_direction = input("Type a direction to move:\n")
-        Move(player_direction)
+        MoveMent(player_direction)
+    elif command.lower() == "story":
+        show_story()
 #     elif command.lower() == "use":
 #         Use()
 #     elif command.lower() == "inspect":
 #         Inspect()
 #     elif command.lower() == "options" or command.lower() == "help":
 #         HelpMessage()
-#     elif command.lower() == "map":
-#         DisplayMap()
+    elif command.lower() == "map":
+        DisplayMap()
     elif command.lower() == "exit":
         current_room = "Exit"
         quit_game = True
@@ -144,15 +196,17 @@ def Status():
 # Fixme that Function that runs most of the game's functions.
 def Game():
     # WelcomeMessage()
-    show_story()
-    show_instructions()
+   # show_story()
+   # show_instructions()
     while not quit_game:
         Main_menu()
     Status()
 
 
 ## Program Execution ##
-
-
+#
+#
 if __name__ == '__main__':
     Game()
+
+
