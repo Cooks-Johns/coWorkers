@@ -192,4 +192,142 @@
 #     sum += num
 #
 # print('Sum:', sum)
+#
 
+# my_list = [0, 5, 10, 15]
+# sums = any(my_list)
+# print(sums)
+
+# Max even
+# def max_even():
+#     nums = [1, 44, 15, 24]
+#     max_even = None
+#     for num in nums:
+#         if num % 2 == 0:
+#             if max_even == None or num > max_even:
+#                 max_even = num
+#                 print(max_even)
+# max_even()
+# num = [2, -43, 9, -2, -58]
+# cnt_neg = 0
+# for i in num:
+#     if i < 0:
+#         cnt_neg += 1
+#     print(cnt_neg)
+
+
+
+# ---- Grades
+#
+# student_grades = {}  # Create an empty dict
+# grade_prompt = "Enter name and grade (Ex. 'Bob A+'):"
+# menu_prompt = (" 1. Add/modify student grade \n"
+#                 "2. Delete student grade \n"
+#                 "3. Print student grades \n"
+#                 "4. Quit\n")
+#
+# while True:  # Exit when user enters no input
+#     command = input(menu_prompt).lower().strip()
+#     if command == '1':
+#         name, grade = input(grade_prompt).split()
+#     # elif command == '2':
+#     #     # ...
+#     elif command == '3':
+#         print(student_grades)
+#     # elif command == '4':
+#     #     break
+#     else:
+#         print('Unrecognized command.')
+#
+
+# my_dict = dict(bananas=1.59, fries=2.39, burger=3.50, sandwich=2.99)
+#
+# # my_dict.update(dict(soda=1.49, burger=3.69))
+# # burger_price = my_dict.get('burger', 0)
+# # print(burger_price)
+#
+# my_dict['burger'] = my_dict['sandwich']
+# val = my_dict.pop('sandwich')
+# print(my_dict['burger'])
+
+
+##-- List slicing
+# nums = [1, 1, 2, 3, 5, 8, 13]
+# # print(nums[1:5])
+# #-  [1, 2, 3, 5]
+# print(nums[5:10])
+# # [8, 13]
+# print(nums[3:-1])
+# # [3, 5, 8]
+###
+# nums = [0, 25, 50, 75, 100]
+# print(nums[0:5:2])
+# # [0, 50, 100]
+# print(nums[0:-1:3])
+# [0, 75]
+
+#--
+# my_list = [5, 10, 20, 40, 80]
+# # my_list[start:end]
+# print('{}\n'.format(my_list))
+# print('From start to end minus 1: {}'.format(my_list[0:2]))
+#
+# # my_list[start:end:stride]
+# print('Every stride element from start to end minus1: {}'.format(my_list[0:5:3]))
+#
+# # my_list[start:]
+# print('Start to end of list: {}'.format(my_list[0:5:3]))
+# # my_list[:end]
+# print('Form beginning of list to end with minus one: {}'.format(my_list[:4]))
+# # my_list[:]
+# print('beginning of list ends minus 1: {}'.format(my_list[:]))
+#----
+
+# nums = [10, 20, 30, 40, 50]
+#
+# for pos, value in enumerate(nums):
+#     tmp = value / 2
+#     if (tmp % 2) == 0:
+#         nums[pos] = tmp
+# print(nums[1])
+#
+# my_list = [1, 1, 2, 3, 5, 8, 13, 21, 34]
+#
+# print('1) ',my_list[:20])
+# print('2) ',my_list[2:5])
+# print('3) ',my_list[3:6])
+# print('4) ',my_list[3:1])
+# print('5) ',my_list[len(my_list)//2:(len(my_list)//2) + 1])
+# print('6) ',my_list[4:])
+
+# Adding to every element
+# my_list = [-5, -4, -3]
+# my_list = [(i+10) for i in my_list]
+# print(my_list)
+
+# Convert each num to a float
+# my_list = [5, 20, 50]
+# my_list = [float(i) for i in my_list]
+# print(my_list)
+
+# user input tnot a list of ints
+# usr_input = input('Enter nums:')
+# my_list = [int(i) for i in usr_input.split()]
+# print(my_list)
+
+#  Sum of rows in two-d list
+# my_list = [[5, 10], [1]]
+# sum_list = [sum(row) for row in my_list]
+# print(sum_list)
+
+
+# Sum of the row with the smallest sum in a two-D table
+my_list = [[5, 10, 15], [2, 3, 16], [100]]
+sum_list = sum
+# min_row = min([sum(row) for row in my_list])
+print(sum_list)
+
+# Twice the vallue
+# [i*2 for i in x]
+
+#Absolute
