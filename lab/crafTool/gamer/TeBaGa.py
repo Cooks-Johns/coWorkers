@@ -82,7 +82,8 @@ gear = {
 
 
 
-# If the player is lost and needs to know where they are located they can t
+# If the player is lost and needs to know where they are located
+# Todo - make a display map that shows the players location on the map
 def DisplayMap():
     print("                                                                              \n"
           "                _________        _______________               ^ North        \n"
@@ -175,21 +176,29 @@ def Commands(command):
 
 
 
-# Todo
-# Todo
-# Todo
-# Todo
-# Todo
-# Todo
+# Todo - how to use items
+def use():
+    pass
+
+# Todo - print out all of the commands
+def help():
+    pass
+
+# Todo - Let player inspect the room to look for item
+def inspect():
+    pass
+
+# Todo - Set the fight sequence
+def fight():
+    pass
+
+# Todo - This is where the current game status is held
+    # player items, players location
 def Status():
     global item_counter
     global room_counter
     global room_engin
-
-
-
-
-
+    pass
 
 
 
