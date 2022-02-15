@@ -4,7 +4,7 @@ Learning how to us python tools by building stuff.
 
 ## TODO's
 
-- [x] [Discord Bot]((https://github.com/Cooks-Johns/coWorkers/tree/main/discord)
+- [x] [Discord Bot](https://github.com/Cooks-Johns/coWorkers/tree/main/discord)
 - [x] [Web scraper](https://github.com/Cooks-Johns/coWorkers/tree/main/junker/top10)
 - [x] [Excel tools](https://github.com/Cooks-Johns/coWorkers/tree/main/excel-tools)
 - [ ] Django application
