@@ -33,8 +33,7 @@
 #
 #     size_to_read = 10
 #
-#     f_contents = f.read(size_to_read)
-#     print(f_contents, end='')
+#
 #
 #     f.seek(100) # using seek you can choose the postion where to start again
 #
@@ -57,20 +56,52 @@
 #  --------  REad a file and then copy it to a new file
 
 # with open('working.txt', 'r') as rf:           # Reading file
-#     with open('working_copy.txt', 'w') as wf:  # Writing file
+#     with open('mydata.txt', 'w') as wf:  # Writing file
 #         for line in rf:
 #             wf.write(line)
 
 # ------ read and copy image
 # rEading images you will need to put it into binary mode
-with open('dingonek.PNG', 'rb') as rf:
-    with open('dingonek_copy.PNG', 'wb') as wf:
-        chunk_size = 4096
-        rf_chunk = rf.read(chunk_size)
+# with open('dingonek.PNG', 'rb') as rf:
+#     with open('dingonek_copy.PNG', 'wb') as wf:
+#         chunk_size = 4096
+#         rf_chunk = rf.read(chunk_size)
+#
+#         while len(rf_chunk) > 0:
+#             wf.write(rf_chunk)
+#             rf_chunk = rf.read(chunk_size)
 
-        while len(rf_chunk) > 0:
-            wf.write(rf_chunk)
-            rf_chunk = rf.read(chunk_size)
+
+def Alter_bmp_image():
+
+    with open('dingonek.PNG', 'rb') as working_img:
+
+        img_data = working_img.read()
+        print('Working....\n')
+# Store the BMP img formate
+# pixel RGB value in bytes 10-14
+        pixel_data_location = img_data[10:14]
+
+# Sequence of 3000 rgby pixels
+        new_pixels = b'\x01'*3000 + b'\x02'*3000 + b'\x03'*3000
+
+# OVerwrite pixels in img with new pixels
+        new_img_data = img_data[:pixel_data_location] + \
+                        new_pixels + \
+                        img_data[pixel_data_location + len(new_pixels)]
+# Build new image
+        new_file = open('new_file.PNG', 'wb')
+        new_file.write(new_img_data)
+        print('Done.')
+
+
+Alter_bmp_image()
+
+
+
+
+
+
 
 
 

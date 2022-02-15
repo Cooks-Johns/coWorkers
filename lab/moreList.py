@@ -322,12 +322,64 @@
 
 
 # Sum of the row with the smallest sum in a two-D table
-my_list = [[5, 10, 15], [2, 3, 16], [100]]
-sum_list = sum
-# min_row = min([sum(row) for row in my_list])
-print(sum_list)
+# my_list = [[5, 10, 15], [2, 3, 16], [100]]
+# sum_list = sum
+# # min_row = min([sum(row) for row in my_list])
+# print(sum_list)
 
 # Twice the vallue
 # [i*2 for i in x]
 
 #Absolute
+
+# # Get a list of integers from the user
+# numbers = [int(i) for i in input('Enter numbers:').split()]
+#
+# #Filter out odd numbers
+# even_numbers = [i for i in numbers if (i % 2) == 0]
+# print('Even numbers only:', even_numbers)
+
+# Filter odds
+#
+# nums = [[10, 20, 30], [98, 99]]
+# print(nums[0][0])
+
+# nums = [[10, 20, 30], [98, 99]]
+# print(nums[1][1])
+
+# nums = [[10, 20, 30], [98, 99]]
+# print(nums[0])
+
+
+# scores = [
+#     [75, 100, 82, 76],
+#     [85, 98, 89, 99],
+#     [75, 82, 85, 5]
+# ]
+
+# ---------------------
+
+# currency = [
+#
+#         [1.00, 5.00, 10.0], # US Dollars
+#         [0.75, 3.77, 7.53], # Euros
+#         [0.65, 3.25, 6.50]  # British pounds
+# ]
+#
+# for row in currency:
+#     for cell in row:
+#         print(cell, end=' ')
+#     print()
+
+# ---------------------
+
+user_input= input()
+lines = user_input.split(',')
+
+# This line uses a construct called a list comprehension, introduced elsewhere,
+# to convert the input string into a two-dimensional list.
+# Ex: 1 2, 2 4 is converted to [ [1, 2], [2, 4] ]
+
+mult_table = [[int(num) for num in line.split()] for line in lines]
+
+''' Your solution goes here '''
