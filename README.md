@@ -4,9 +4,9 @@ Learning how to us python tools by building stuff.
 
 ## TODO's
 
-- [ ] Discord Bot
-- [ ] Web scraper
-- [ ] Excel tools
+- [x] [Discord Bot]((https://github.com/Cooks-Johns/coWorkers/tree/main/discord))
+- [x] [Web scraper](https://github.com/Cooks-Johns/coWorkers/tree/main/junker/top10)
+- [x] [Excel tools](https://github.com/Cooks-Johns/coWorkers/tree/main/excel-tools)
 - [ ] Django application
 <!-- - [ ] [gnuradio](https://wiki.gnuradio.org/index.php/InstallingGR#Raspberry_Pi) -->
 - [ ] Messenger
