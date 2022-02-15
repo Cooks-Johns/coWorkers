@@ -8,7 +8,7 @@ Learning how to us python tools by building stuff.
 - [ ] Web scraper
 - [ ] Excel tools
 - [ ] Django application
-- [ ] [gnuradio](https://wiki.gnuradio.org/index.php/InstallingGR#Raspberry_Pi)
+<!-- - [ ] [gnuradio](https://wiki.gnuradio.org/index.php/InstallingGR#Raspberry_Pi) -->
 - [ ] Messenger
 - [ ] Something fun1 #todo find other cool projects to work on
 - [ ] Something fun2 #todo find other cool projects to work on
