@@ -1,6 +1,7 @@
 import os
 import struct
-
+import sys
+import csv
 
 # Read file contents
 # def make():
@@ -21,6 +22,8 @@ import struct
 #     pass
 
 """ ------  This is will create a file.  ------"""
+
+
 # with open('myfile.txt', 'w') as f:
 
 
@@ -87,7 +90,6 @@ import struct
 
 # ---- Search for file in dir
 def File_finder():
-
     find_me = input(
         "Enter the file location in the following format - \n'"
         "''C:\\', 'Users', 'BWayne', 'batsuit.jpg'\n")
@@ -133,6 +135,8 @@ logs/
              7/
               music.mp3
 '''
+
+
 def Tree_walker():
     year = input('Enter your year: \n')
     path = os.path.join('logs', year)
@@ -143,6 +147,7 @@ def Tree_walker():
         print('and the files: {}'.format(files))
     pass
 
+
 # ==------ byte objects
 def tasty_bytes():
     my_bytes = b'This is a taste of a byte literal'
@@ -150,10 +155,12 @@ def tasty_bytes():
     print(type(my_bytes))
     pass
 
+
 # -----------
 def byte_string_literal():
     print(b'123456789 @ is the same as \x31 \x32 \x33 \x34 \x35 \x36 \x37 \x38 \x39 \x40')
     pass
+
 
 # ----------- This will read the binary data fo a image
 def read_image_binary():
@@ -191,35 +198,60 @@ def read_image_binary():
 #     new_ball_file.close()
 #
 
-## ----- Packing values
-def packing_values():
-    print('Result of packing 65231235:', end=' ')
-    print(struct.pack('>h', 3276))
+# ## ----- Packing values
+# def packing_values():
+#     print('Result of packing 65231235:', end=' ')
+#     print(struct.pack('>h', 3276))
+#
+#     print('Result of packing 5,234, 9243:', end=' ')
+#     print(struct.pack('>hhh', 5, 234, 9243))
+#
+#     print('Result of packing 1235:', end=' ')
+#     print(struct.pack('>h', 1235))
+#
+#
+#     print('Result of packing 5 and 256 and 455:', end=' ')
+#     print(struct.pack('>hhh', 5, 256, 455))
+#
+#
+# ## ----- Un-Packing values
+# def unpacking_byte():
+#     print('Result of unpacking {}:'.format(repr('\x00\x05')), end=' ')
+#     print(struct.unpack('>h', b'\x00\x05'))
+#
+#     print('Result of unpacking {}:'.format(repr('\x01\x00')), end=' ')
+#     print(struct.unpack('>h', b'\x01\x00'))
+#
+#     print('Result of unpacking {}:'.format(repr('\x00\x05\x01\x00')), end=' ')
+#     print(struct.unpack('>hh', b'\x00\x05\x01\x00'))
+#
+# ------------------------ --------------------------------------
+# Todo -- Dive deeper into how to add up ints within a  file
+def cmd_args():
+    if len(sys.argv) != 2:
+        print('Usage: {} input_file'.format(sys.argv[0]))
+        sys.exit(1)
 
-    print('Result of packing 5,234, 9243:', end=' ')
-    print(struct.pack('>hhh', 5, 234, 9243))
+    print('Opening file {}.'.format(sys.argv[1]))
 
-    print('Result of packing 1235:', end=' ')
-    print(struct.pack('>h', 1235))
+    if not os.path.exists(sys.argv[1]):
+        print('File does not exist.')
+        sys.exit(1)
+    with open(sys.argv[1], 'r') as f:
 
+        # Input files should contain two integers on separate lines
+        print('Reading two ints.')
+        num1 = int(f.readline())
+        num2 = int(f.readline())
 
-    print('Result of packing 5 and 256 and 455:', end=' ')
-    print(struct.pack('>hhh', 5, 256, 455))
+        print('Closing file {}'.format(sys.argv[1]))
 
-
-## ----- Un-Packing values
-def unpacking_byte():
-    print('Result of unpacking {}:'.format(repr('\x00\x05')), end=' ')
-    print(struct.unpack('>h', b'\x00\x05'))
-
-    print('Result of unpacking {}:'.format(repr('\x01\x00')), end=' ')
-    print(struct.unpack('>h', b'\x01\x00'))
-
-    print('Result of unpacking {}:'.format(repr('\x00\x05\x01\x00')), end=' ')
-    print(struct.unpack('>hh', b'\x00\x05\x01\x00'))
+        print('\nnum1: {}'.format(num1))
+        print('num2: {}'.format(num2))
+        print('num1 + num2: {}'.format(num1 + num2))
+    pass
 
 
 
 if __name__ == '__main__':
     pass
-
