@@ -213,48 +213,48 @@ Scope resolution = The process of searching namespaces for a name
 #
 # print('Player: {} Troll: {}'.format(str(player_roll), str(troll_roll)))
 
-###    -------
+##    -------
 
-# def avg(a, b):
-#     tmp = (a + b) / 2.0 # will create tmp in local namespace
-#     return tmp
+def avg(a, b):
+    tmp = (a + b) / 2.0 # will create tmp in local namespace
+    return tmp
 
-# def get_tmp():
-#     a = 5
-#     b = 10
-#     tmp = a + b # This creates tmp in global namespace
-#     # print('Avg: {:f}'.format(avg(a, b)))
-#     print('Sum: {:f}'.format(tmp))
-#
-# get_tmp()
-#
-#
+def get_tmp():
+    a = 5
+    b = 10
+    tmp = a + b # This creates tmp in global namespace
+    # print('Avg: {:f}'.format(avg(a, b)))
+    print('Sum: {:f}'.format(tmp))
 
-###    ------- arbitrary argument list
+get_tmp()
 
-# def sandwich(bread, meat, *sauce):
-#     print('{} on {}'.format(meat, bread), end=' ')
-#     if len(sauce) > 0:
-#         print('with', end=' ')
-#     for extra in sauce:
-#         print(extra, end=' ')
-#     print("")
-#
-#
-# sandwich('sourdough', 'turkey', 'mayo')
-# sandwich('wheat', 'ham', 'mustard', 'tomato', 'lettuce')
 
-###    -------
-#
-# def sandwich(bread, meat, **condiments):  ## **condiments can be any word
-#     print('{} on {}'.format(bread, meat))
-#     for category, extra in condiments.items():
-#         print('   {}: {}'.format(category, extra))
-#
-# sandwich('sourdough', 'turkey', sauce='mayo')
-# sandwich('wheat', 'ham', sauce1='mustard', veggie1='tomato', veggie2='lettuce')
-#
-#
+
+##    ------- arbitrary argument list
+
+def sandwich(bread, meat, *sauce):
+    print('{} on {}'.format(meat, bread), end=' ')
+    if len(sauce) > 0:
+        print('with', end=' ')
+    for extra in sauce:
+        print(extra, end=' ')
+    print("")
+
+
+sandwich('sourdough', 'turkey', 'mayo')
+sandwich('wheat', 'ham', 'mustard', 'tomato', 'lettuce')
+
+##    -------
+
+def sandwich(bread, meat, **condiments):  ## **condiments can be any word
+    print('{} on {}'.format(bread, meat))
+    for category, extra in condiments.items():
+        print('   {}: {}'.format(category, extra))
+
+sandwich('sourdough', 'turkey', sauce='mayo')
+sandwich('wheat', 'ham', sauce1='mustard', veggie1='tomato', veggie2='lettuce')
+
+
 
 
 
