@@ -110,7 +110,7 @@ mak_str()
 # # values_list = input().split(',')  # Program receives comma-separated values like 5,4,12,19
 # values_list = 'all,good,things,must,end,here'
 #
-# if __name__ == '__main__':
+# if __name__ == '__mai
 #     split(values_list)
 
 
