@@ -17,7 +17,7 @@ def wordRepeat(str):
     string_list = str.split()
 
     # gives set of unique words
-    # same_word = set(string_list)
+    # same_word = set(string_list) ## by using this the word will not print more than once
 
     for words in string_list:
         print(words, string_list.count(words))
