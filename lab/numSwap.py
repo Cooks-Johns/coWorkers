@@ -1,12 +1,12 @@
-one = 2
-two = 93
-
-
-def swap_values(user_val1, user_val2):
-    user_val1 = one
-    user_val2 = two
-    tmp = [user_val2, user_val1]
-    return tmp
+# one = 2
+# two = 93
+#
+#
+# def swap_values(user_val1, user_val2):
+#     user_val1 = one
+#     user_val2 = two
+#     tmp = [user_val2, user_val1]
+#     return tmp
 
 
 #
@@ -112,3 +112,15 @@ mak_str()
 #
 # if __name__ == '__main__':
 #     split(values_list)
+
+
+
+def swap_values(a,b):
+    x = a
+    y = b
+    print('{} {}'.format(x, y))
+
+b = int(input())
+a = int(input())
+
+swap_values(a,b)
