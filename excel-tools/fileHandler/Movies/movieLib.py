@@ -9,6 +9,10 @@
 30: The Simpsons
 
 '''
+
+# FIXME -- need to remove the first line from the file
+    # TODO -- Learn why the first line is printing they way it is
+
 # file.readlines()
 
 def main(filename):
