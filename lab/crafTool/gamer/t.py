@@ -12,8 +12,8 @@ DESC:  In the Foyer there are the shoesOfHermes,
         zapped with the wand. Last in the WineCellar this is where
         the Potion is and should be taken if bitten by the Wendigo.
 1. You must retrieve all 6 items aboard the ship.
-2. You must turn on the engine room's power.
-3. You must defeat the zombie once all 6 items have been collected.
+2. You must turn on the  room's power.
+3. You must defeat the Windigo once all 6 items have been collected.
 '''
 
 
@@ -82,9 +82,9 @@ room_desc_update = {
 
 current_room = "Foyer"
 move_counter = 0  # Total moves in the game.
-item_counter = 0  # How many total items have been retrieved
-room_counter = 0  # How many rooms are fully functional
-fixed_engine_room = False
+item_count = 0  # How many total items have been retrieved
+room_count = 0  # How many rooms are fully functional
+room_actions = False
 quit_game = False
 inventory = []
 
@@ -112,7 +112,7 @@ def WelcomeMessage():
 
 # A function that provides players with a list of options
 def HelpMessage():
-    print("<< List of commands to type >>")
+    print("<< Command List >>")
     print("'Move': Choose to move either north, south, east, or west.")
     print("'Use': Use an item in a certain room")
     print("'Inspect': Examine the room for items")
@@ -141,10 +141,10 @@ def DisplayMap():
 # The menu that shows up after every action, displaying the player's status.
 def Menu():
     global current_room
-    global item_counter
+    global item_count
     global quit_game
 
-    item_counter = len(inventory)
+    item_count = len(inventory)
 
     print("\n< ================================================================================================== >")
     print("You are currently in:", current_room)
@@ -183,7 +183,7 @@ def Commands(command):
 # Function that moves the player
 def Move(direction):
     global move_counter
-    global quit_game # only True if player's current room is the bilge.
+    global quit_game # only True if player's current room is the Unknown Portal.
     global current_room
 
     move_counter += 1 # Player used MOVE.
@@ -205,6 +205,9 @@ def Move(direction):
         print("Direction does not exist")
 
 # Function that inspects room for items or hints
+    # Fixme make a roll function so that the user may need to look a few times to find the item
+    # Todo if user gets crystal ball first they get a list of all items or if they read not in kitchen
+
 def Inspect():
     global move_counter
     global current_room
@@ -241,9 +244,11 @@ def Use():
     global current_room
     global room_desc
     global room_function
-    global fixed_engine_room
+    global room_actions
 
     move_counter += 1
+
+
 
     # Unlock item in room
     for location, pair in collectibles.items():
@@ -251,10 +256,10 @@ def Use():
             if current_room == location and item in inventory: # Item already exists in player's inventory.
                 print("\nYou already have the item for this room.")
                 break
-            elif current_room == "Engine Room" and "Valve" in inventory and not fixed_engine_room: # Event 2
+            elif current_room == "Unknown Portal" and "Valve" in inventory and not room_actions: # Event 2
                 print("< Turning on Power >")
                 room_function[current_room] = 1
-                fixed_engine_room = True
+                room_actions = True
                 for location, description in room_desc_update.items():
                     room_desc[location] = description # Updates every description for all rooms.
                 room_desc[current_room] = room_desc_update[current_room][2]
@@ -265,11 +270,12 @@ def Use():
                 restriction = "FREE"
                 pair[item] = restriction
                 room_desc[location] = room_desc_update[location]  # Room changed, change description
-                if current_room == "Engine Room" and not fixed_engine_room:
+                if current_room == "Unknown Portal" and not room_actions:
                     room_desc[location] = room_desc_update[location][1]
                     break
                 room_function[location] = 1
                 break
+
             elif current_room == location and restriction == "FREE": # Item in room is free to obtain
                 print("\nAn item is located somewhere in this room. Type 'Inspect' to retrieve it.")
                 break
@@ -287,44 +293,48 @@ def Use():
 
 # Function that determines whether the player has won or lost
 def Result():
-    global item_counter # Must be 6 in order to win
-    global room_counter # Must be 8 in order to win
-    global fixed_engine_room # Must be true in order to win
+    global item_count # Must be 6 in order to win
+    global room_count # Must be 8 in order to win
+    global room_actions # Must be true in order to win
 
     for value in room_function.values():
-        room_counter += value
-    print(room_counter)
+        room_count += value
+    print(room_count)
 
-    if current_room == "Unknown Portal" and item_counter == 6:
-        if room_counter == 8 and fixed_engine_room == True:
-            print("\n<<< CONGRATULATIONS >>>\n"
+    if current_room == "Unknown Portal" and item_count == 6:
+        if room_count == 18 and room_actions == True:
+            print("\n<<< Wow there's the cat >>>\n"
                   "\nYou won!\n"
-                  "You completed all your tasks, gathered every item, fixed every room, turned on the power, and killed"
-                  " the zombie!\n"
-                  "You're a hero!\n")
-        elif room_counter == 8 and not fixed_engine_room:
+                  "Now that the Windigo is gone the cat has come out to play"
+                  " as the protal slowly closes this lil guy \n"
+                  "slips out and you just make it behind her!\n"
+                  "Thats when you get a call from the wizard \n"
+                  "letting you know to read the \n"
+                  "NOTE: Hey, you might have to\n"
+                  "kill the windigo lol but for real grab all the gear first!\n")
+        elif room_count == 8 and not room_actions:
             print("\n>>> GAME OVER <<<\n"
-                  "\nYou forgot to turn on the lights! The zombie delivered a fatal blow and knocked you out\n")
+                  "\nWhat was you thinking \n")
         else:
             print("\n>>> GAME OVER <<<\n"
-                  "\nYour tasks were not fully completed.\n"
-                  "Without the necessary equipment or power, the zombie overpowered you\n")
+                  "\nYou need to get more gear to go futher.\n"
+                  "Get out of here the Windigo is going to eat you alive\n"
+                  "to late awwwwwww man")
     else:
         print("\n>>> GAME OVER <<<\n"
-              "You were unprepared and the zombie managed to escape\n")
+              "You were unprepared and the portal and get melted trying\n")
 
     Stats()
 
-# Print player stats by the end of the game.
+# This will print player stats at the end of the game.
 def Stats():
-    global item_counter
-    global room_counter
+    global item_count
+    global room_count
 
     print("\n<< ============================================ >>\n")
     print("<< Player Stats >>")
     print("Total number of moves used:", move_counter) # Using MOVE, USE, or INSPECT adds 1 to the counter.
-    print("Items collected: " + str(item_counter) + "/6")
-    print("Rooms fixed: " + str(room_counter) + "/8")
+    print("Items collected: " + str(item_count) + "/6")
     print("\n<< ============================================ >>\n")
 
 # Function that runs most of the game's functions.
@@ -341,4 +351,3 @@ def Game():
 if __name__ == '__main__':
     Game()
 
-#TODO: Use changes description for engine room. Fix that
