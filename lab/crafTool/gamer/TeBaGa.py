@@ -15,15 +15,14 @@
 
 """
 
-# Todo -- Show the goal of the game and move commands
-def show_instructions():
+# Todo -- Show the goal of the game and move commands -- Make this the HelpMessage
+def Show_instructions():
     # Print out the main menu and the commands
     print("\n<<-=============================================================================================->>\n")
     print('                     Welcome to Portal Protector Text Adventure Game.')
     print('         Collect 6 items to with the game, or be devoured by the hungry Wendigo.')
     print('     Move commands: (n)go North, (e)go East, (s)go South, (w)go West, (exit) to exit')
     print('                          Add to Inventory: get "item name"')
-    print("\n<<-=============================================================================================->>\n")
 
 
 
@@ -76,8 +75,34 @@ room_items = {
     'Unknown Portal': 1
 }
 
-gear = {
-    'WashRoom': {}
+gear = { # Fixme collectibles FREE change
+    'WashRoom': { 'Elemental Wand': 'FREE'},
+    'Foyer': {'Shoes of Hermes': 'FREE'},
+    'Temple': {'Samurai Armor': 'FREE'},
+    'Crystal Ball Surveillance Room': {'Crystal ball': 'FREE'},
+    'Kitchen': {'Salt Cured Meat': 'FREE'},
+    'Wine Cellar': {'Potion': 'FREE'}
+    # 'Unknown Portal': {'item': 'Wendigo'}   # bad guy
+}
+
+room_desc = {
+    'WashRoom': 'This is a nice bathroom but why are there so many mirrors',
+    'Foyer': 'You see a sign that ask you to remove your shoes',
+    'Temple': 'Just a open and empty room with a burn pit in the middle looks like it was used recently',
+    'Crystal Ball Surveillance Room': 'Why do they work like ring cameras lol ',
+    'Kitchen': 'Smells a lil musky must be the broccoli',
+    'Wine Cellar': 'Grab some wine or look for the ',
+    'Unknown Portal': 'This is when you realize that stench wasn\'t the broccoli'   # bad guy
+}
+
+room_desc_updater = {
+    'WashRoom': 'This is a nice bathroom but really creapy',
+    'Foyer': 'Still can\'t find that damn cat',
+    'Temple': 'kitty kitty ',
+    'Crystal Ball Surveillance Room': 'Why do they work like ring cameras lol ',
+    'Kitchen': 'Smells a lil musky must be the broccoli',
+    'Wine Cellar': 'Grab some wine or look for the ',
+    'Unknown Portal': 'this isn\'t going to be fun'   # bad guy
 }
 
 
@@ -115,10 +140,61 @@ inventory = []
 
 
 # Fixme
+def WelcomeMessage():
+    print('Welcome to my game')
 
+
+def DisplayMap():
+    print('Show user commands')
+
+
+
+
+# Todo -- Startint point
+def Main_menu():
+    global current_room
+    global item_counter
+    global quit_game
+
+    item_counter = len(inventory)
+    print("\n<<-=============================================================================================->>\n")
+    print('Your currently in: {}'.format(current_room))
+    print('The Items you collect: {}'.format(inventory))
+    print("\n<<-=============================================================================================->>\n")
+    user_command = input('Enter your command:\n')  # command
+    Commands(user_command)
+
+
+
+# Todo  ---- >  Menu()
+def Commands(user_command):
+    global quit_game
+    global current_room
+
+    if user_command.lower() == "move":
+        player_direction = input("Type a direction to move:\n")
+        MoveMent(player_direction)
+    elif user_command.lower() == "story":
+        show_story()
+#     elif user_command.lower() == "use":
+#         Use()
+#     elif user_command.lower() == "inspect":
+#         Inspect()
+    elif user_command.lower() == "options" or user_command.lower() == "help":
+        Show_instructions()
+    elif user_command.lower() == "map":
+        DisplayMap()
+    elif user_command.lower() == "exit":
+        current_room = "Exit"
+        quit_game = True
+    else:
+        print("\n< Invalid Input. Please refer to command list. Type 'help' or 'options' to view the list. >\n")
+
+
+ # TODO ---  Move()
 def MoveMent(direction):
     global move_counter
-    global quit_game # only True if player's current room is the bilge.
+    global quit_game    # only True if player's current room is the uknown portal
     global current_room
 
     move_counter += 1 # Player used MOVE.
@@ -126,53 +202,20 @@ def MoveMent(direction):
 
     if direction in rooms[current_room]:
         # Move player to that room
-        print("\nMoving", direction)
-        current_room = rooms.get(direction)
+        for loot, location in rooms[current_room].items():
+            if direction == loot:
+                print('\nMoving to the {}'.format(direction))
+                current_room = location
+
+                if current_room == 'Unknown Portal':
+                    quit_game = True
 
     else:
         # Direction does not exist in that room.
         print("Direction does not exist")
-    return current_room
 
 
 
-
-
-
-# Todo -- Startint point
-def Main_menu():
-    print("\n<<-=============================================================================================->>\n")
-    print('Your currently in: {}'.format(current_room))
-    print('The Items you collect: {}'.format(inventory))
-    print("\n<<-=============================================================================================->>\n")
-    user_command = input('Enter your command:\n')
-    Commands(user_command)
-
-
-
-# Todo
-def Commands(command):
-    global quit_game
-    global current_room
-
-    if command.lower() == "move":
-        player_direction = input("Type a direction to move:\n")
-        MoveMent(player_direction)
-    elif command.lower() == "story":
-        show_story()
-#     elif command.lower() == "use":
-#         Use()
-#     elif command.lower() == "inspect":
-#         Inspect()
-#     elif command.lower() == "options" or command.lower() == "help":
-#         HelpMessage()
-    elif command.lower() == "map":
-        DisplayMap()
-    elif command.lower() == "exit":
-        current_room = "Exit"
-        quit_game = True
-    else:
-        print("\n< Invalid Input. Please refer to command list. Type 'help' or 'options' to view the list. >\n")
 
 
 
@@ -180,9 +223,6 @@ def Commands(command):
 def use():
     pass
 
-# Todo - print out all of the commands
-def help():
-    pass
 
 # Todo - Let player inspect the room to look for item
 def inspect():
@@ -192,13 +232,24 @@ def inspect():
 def fight():
     pass
 
+# Todo - print out all of the commands
+def Result():
+
+    pass
+
+
 # Todo - This is where the current game status is held
     # player items, players location
 def Status():
     global item_counter
     global room_counter
-    global room_engin
-    pass
+
+    print("\n<< ============================================ >>\n")
+    print("<< Player Stats >>")
+    print("Total number of moves used:", move_counter)  # Using MOVE, USE, or INSPECT adds 1 to the counter.
+    print("Items collected: " + str(item_counter) + "/6")
+    # print("Rooms fixed: " + str(room_counter) + "/8")
+    print("\n<< ============================================ >>\n")
 
 
 
@@ -209,7 +260,7 @@ def Game():
    # show_instructions()
     while not quit_game:
         Main_menu()
-    Status()
+
 
 
 ## Program Execution ##
