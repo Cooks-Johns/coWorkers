@@ -35,7 +35,7 @@ def main(filename):
     with open('output_keys.txt', 'w') as file:
         for key in keys:
             names = '; '.join(name for name in dict_info[key])  # will print the name with number
-            file.write(str(key) + ': ' + names + "\n")
+            file.write(str(key) + ': {}\n'.format(names))
     names = []  # Dictionary value
     for item in dict_info:  # will add name to dict
         for name in dict_info[item]:
