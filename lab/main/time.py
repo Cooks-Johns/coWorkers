@@ -6,8 +6,8 @@ class Time:
 
 
 my_time = Time()
-my_time.hours = 7
-my_time.minutes = 15
+my_time.hours = 24
+my_time.minutes = 60
 
 print('{} hours'.format(my_time.hours), end=' ')
 print('and {} minutes'.format(my_time.minutes))
