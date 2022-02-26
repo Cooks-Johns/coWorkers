@@ -8,14 +8,32 @@ time1 = TimeSetter()  # Create an instance of the Time class called time1
 
 def min_hour():
     # Fixme make a conversion
-    mins = 
+    minin = 60
+
+
+    time1.hours = time1.min / minin
+    time1.min = minin
     pass
 
 def hour_min():
+    # Fixme make a conversion
     pass
 
-time1.hours = time1.min / 60
-time1.min = 60
+def hours_days():
+    # Fixme make a conversion
+
+    pass
+
+def day_hours():
+    # Fixme make a conversion
+
+    pass
+
+def hours_Week():
+    # Fixme make a conversion
+
+    pass
+
 
 time2 = TimeSetter()  # Create a second instance called time2
 time2.hours = 12
