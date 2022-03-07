@@ -15,7 +15,7 @@ def min_hour():
     time1.min = minin
     pass
 
-def hour_min():
+class hour_min():
     # Fixme make a conversion
     pass
 
@@ -33,6 +33,8 @@ def hours_Week():
     # Fixme make a conversion
 
     pass
+
+
 
 
 time2 = TimeSetter()  # Create a second instance called time2
